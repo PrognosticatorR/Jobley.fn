@@ -116,7 +116,7 @@ hr.top_line {
 .footer {
     background: #15202a none repeat scroll 0 0 !important;
     color: #fff;
-    padding: 30px 0 40px;
+    padding: 30px 15px 40px 15px;
     position: relative;
 }
 
@@ -281,6 +281,10 @@ a {
 @media (max-width:500px) {
     .outer-wrapper {
         width: 92%;
+    }
+    .container .job_container {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -528,6 +532,10 @@ hr.showpage_line:before {
     border-radius: 20px;
 }
 
+.showpage_inline {
+    display: inline-block;
+}
+
 .showpage_applynow a {
     color: #fff
 }
@@ -670,11 +678,11 @@ td a {
     #home_img {
         display: none;
     }
-    .jobs_tiles {
+    .img-box .jobs_tiles {
         margin-bottom: 15px;
         margin-top: 15px;
-        font-size: 16px;
-        line-height: 1.6em;
+        font-size: 18px;
+        line-height: 2.1em;
     }
     .jobs_tiles:hover {
         background: aliceblue;
@@ -682,7 +690,15 @@ td a {
         opacity: 0.6;
     }
     .container {
-        width: 95%;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-toggle {
+        margin-right: 50px;
+    }
+    .logo_text {
+        margin-left: 20px;
     }
     .fb_like {
         width: 300px;
@@ -690,8 +706,9 @@ td a {
     .current_opening {
         margin-top: 10px;
     }
-    .navbar-inverse .navbar-brand {
-        margin-left: 0;
+    .alert {
+        padding: 0;
+        margin: 10px;
     }
 }
 

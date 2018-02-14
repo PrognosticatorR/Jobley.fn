@@ -26,7 +26,7 @@ router.get('/logout', function(req, res) {
 //                                    Register Functionality
 // ========================================================================================================
 router.get('/Jobley_signup', function(req, res) {
-    res.render('signup.ejs');
+
 });
 
 router.post('/Jobley_signup', function(req, res) {
@@ -41,7 +41,6 @@ router.post('/Jobley_signup', function(req, res) {
         } else {
             passport.authenticate('local')(req, res, function() {
                 req.flash('success', 'Welcome To Jobley.in ' + user.username);
-                console.log(user);
                 res.redirect('/');
             });
         }

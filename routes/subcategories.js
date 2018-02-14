@@ -1,4 +1,5 @@
 var express = require('express');
+var trimRequest = require('trim-request');
 var router = express.Router({ mergeParams: true });
 var Category = require('../models/categories');
 var SubCategory = require('../models/subcategories');
@@ -17,7 +18,7 @@ router.get('/newsub', middlewere.isLoggedIn, function(req, res) {
     });
 });
 
-router.post('/', middlewere.isLoggedIn, function(req, res) {
+router.post('/', trimRequest.all, middlewere.isLoggedIn, function(req, res) {
     Category.findOne({ title: req.params.cat_title }, function(err, category) {
         if (err || !category) {
             console.error(err);

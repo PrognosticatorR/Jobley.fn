@@ -13,12 +13,17 @@
                     <p class="showpage_fonts"><i class="glyphicon glyphicon-education" aria-hidden="true"></i>
                         <%= foundJob.eligibility %>
                     </p>
-                    <p class="showpage_fonts"><i class="glyphicon glyphicon-briefcase " aria-hidden="true"></i>
+                    <div class="showpage_fonts showpage_inline"><i class="glyphicon glyphicon-briefcase " aria-hidden="true"></i>
                         <%= foundJob.experience %>
-                    </p>
+                    </div>
+                    <div class="showpage_date">Posted On:
+                        <strong><%=foundJob.created.toDateString()%></strong>
+                    </div>
+
                     <hr class="showpage_line">
                     <div class="showpage_date">
-                        Last Date:<strong><%=foundJob.lastDate%></strong>
+                        Last Date:<strong><%=foundJob.lastDate%>
+                            </strong>
                     </div>
                     <button class="btn btn-danger btn-sm " id="showpg_btn"><a href="<%= foundJob.applyNow%>" target="_blank">Apply Now</a>
                 </button>
@@ -29,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="fb-like" data-href="https://www.facebook.com/jobley.informer/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="https://www.facebook.com/jobley.informer/" data-layout="standard" data-action="like" data-width="320px" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
         <div class="row">
@@ -61,8 +66,8 @@
                     </div>
                     <button class="btn btn-danger btn-sm " id="showpg_btn"><a href="<%= foundJob.applyNow %>" target="_blank">Apply Now</a>
                 </button>
-                    <div class="fb-share-button" data-href="https://www.jobley.in/<%= category.title %>/job/<%= foundJob.title %>" data-layout="button" data-size="small" data-mobile-iframe="true">
-                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+                    <div class="fb-share-button" data-href="https://www.jobley.in/<%= category.title %>/job/<%= foundJob.title %>" data-layout="button" data-size="small" data-width="320px" data-mobile-iframe="true">
+                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share Job</a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var trimRequest = require('trim-request');
+
 var router = express.Router({ mergeParams: true });
 var Category = require('../models/categories');
 var SubCategory = require('../models/subcategories');
@@ -52,7 +54,7 @@ router.get("/job/new", middlewere.isLoggedIn, function(req, res) {
 });
 
 // ====================================== POsting  JObs ==========================
-router.post('/job', middlewere.isLoggedIn, function(req, res) {
+router.post('/job', trimRequest.all, middlewere.isLoggedIn, function(req, res) {
     Category.findOne({ title: req.body.job.Category }, function(err, category) {
         if (err || !category) {
             console.error(err);

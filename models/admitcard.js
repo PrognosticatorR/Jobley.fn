@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
 var admitSchema = new mongoose.Schema({
     title: String,
     category: String,

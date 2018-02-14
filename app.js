@@ -25,6 +25,8 @@ var Job = require('./models/jobs');
 var SubCategory = require('./models/subcategories');
 var Blog = require('./models/blogs');
 var User = require('./models/users');
+var shortCat = require('./models/shortCat');
+
 var config = require('./config/config');
 
 var admitCardRoutes = require('./routes/admit&result');
@@ -74,6 +76,11 @@ app.use(function(req, res, next) {
     res.locals.success = req.flash('success');
     next();
 });
+
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use(categoryRoutes);
 app.use('/category/:cat_title', subCategoryRoutes);
