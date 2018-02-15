@@ -15,9 +15,41 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
     <script type="text/javascript" src="/javascript/index.js"></script>
     <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90178448-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-90178448-2');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PVJTRHM');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVJTRHM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="navbar navbar-inverse  navbar-fixed-top">
         <div class="container">
@@ -31,8 +63,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="/aboutus">About Us</a></li>
-                    <li><a target="_blank" href="/contact-us">Contact Us <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> </a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/contact-us">Contact Us <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> </a></li>
                     <% if(user){ %>
                         <li><a>Welcome <%= user.username %></a></li>
                         <li>

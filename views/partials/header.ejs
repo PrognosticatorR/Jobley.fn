@@ -15,9 +15,43 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="/stylesheets/main.css">
     <script type="text/javascript" src="/javascript/index.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90178448-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-90178448-2');
+    </script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PVJTRHM');
+    </script>
+
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVJTRHM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
@@ -63,15 +97,15 @@
                             <li><a href="/cat/Old Papers">Old Papers</a></li>
                             <li><a href="/category/Union Public Service Commission(UPSC)">Union Public Service Commission(UPSC)</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Follow Us</a></li>
+                            <li><a href="/comingsoon">Follow Us</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/comingsoon">Ask Questions</a></li>
+                            <li><a href="/askUs">Ask Questions</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="/aboutus">About Us</a></li>
-                    <li><a target="_blank" href="/contact-us">Contact Us <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> </a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/contact-us">Contact Us <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> </a></li>
                     <% if(user){ %>
                         <li><a>Welcome <strong><%= user.username %></strong></a></li>
                         <li><a href="/logout"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i></a></li>
