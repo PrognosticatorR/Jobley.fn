@@ -91,6 +91,7 @@ router.post('/job', trimRequest.all, middlewere.isLoggedIn, function(req, res) {
 // ============================ Showing A Jobs On ============================
 router.get('/job/:job_title', function(req, res) {
     Category.findOne({ title: req.params.cat_title }, function(err, category) {
+        console.log(req.originalUrl);
         if (err || !category) {
             console.log(err);
             req.flash('error', 'category not found , refused connection with error code ' + 404);

@@ -825,3 +825,9 @@ ul.dropdown-menu {
     color: antiquewhite;
     margin-bottom: 45px;
 }
+
+@media(min-width:550px) {
+    .mob_tiles {
+        display: none;
+    }
+}

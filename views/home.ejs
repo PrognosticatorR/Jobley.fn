@@ -5,20 +5,32 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-8">
+                <div class=" col-md-4 col-sm-6 img-box">
+                    <div class="img-responsive img-rounded thumbnail">
+                        <a class="home_img" href="/category/Latest Jobs %>">
+                            <p class="jobs_tiles  mob_tiles">
+                                All Latest Jobs
+                            </p>
+                        </a>
+                    </div>
+                </div>
                 <% categories.forEach(function(category){ %>
                     <% if(category.image){ %>
                         <div class=" col-md-4 col-sm-6 img-box">
                             <div class="img-responsive img-rounded thumbnail">
                                 <a class="home_img" href="/category/<%= category.title %>">
-                        <img id="home_img" src="<%= category.image %>">
-                        <p class="jobs_tiles">
-                            <%= category.title %>
-                        </p>
-                    </a>
+                                    <% if(category.image){%>
+                                        <img id="home_img" src="<%= category.image %>">
+                                        <%}%>
+                                            <p class="jobs_tiles ">
+                                                <%= category.title %>
+                                            </p>
+                                </a>
                             </div>
                         </div>
                         <% } %>
                             <% }); %>
+
                                 <div class=" col-sm-12">
                                     <div class="thumbnail blogbox">
                                         <div>

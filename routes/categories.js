@@ -1,4 +1,5 @@
 var express = require('express');
+var url = require('url');
 var router = express.Router();
 var Category = require('../models/categories');
 var Blog = require('../models/blogs');
@@ -23,9 +24,10 @@ router.get('/', function(req, res) {
                         blogs: blogs
                     });
                 }
-            })
+            });
         }
     });
+
 });
 
 //========================= Posting data on home ============================
@@ -34,13 +36,13 @@ router.post("/", middlewere.isLoggedIn, function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            req.flash('success','Category created successfully :) !');
+            req.flash('success', 'Category created successfully :) !');
             res.redirect("/");
         }
     });
 });
 
-router.get('/newcategory',middlewere.isLoggedIn, function(req, res) {
+router.get('/newcategory', middlewere.isLoggedIn, function(req, res) {
     res.render('newcategory');
 });
 

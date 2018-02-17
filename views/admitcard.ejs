@@ -12,9 +12,16 @@
                 </tr>
                 <% foundCat.admits.slice().reverse().forEach(function(card){ %>
                     <tr>
+
                         <td><span><%= card.title %></span></td>
                         <td><span><%= card.created.toDateString() %></span></td>
-                        <td class="jobs_table"><a href="<%=card.download%>"><span>Go To <%=foundCat.title%> Page</span></a></td>
+                        <td class="jobs_table"><a href="<%=card.download%>"><span>Go To <%=foundCat.title%> Page</span></a>
+                            <% if(user){ %>
+                                <form id="delete_form" action="/cat/<%=card.title%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger btn-xs">Delete</button>
+                                </form>
+                                <%}%>
+                        </td>
                     </tr>
 
                     <% }) %>

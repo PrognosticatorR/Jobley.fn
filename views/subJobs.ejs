@@ -4,8 +4,8 @@
             <h3 class="text-center"><strong><%= foundsubcategory.title %> Jobs</strong></h3>
         </div>
         <div class="table-responsive">
-            <table class="table table-condensed table-bordered">
-                <tr>
+            <table class="table table-condensed table-bordered table-hover">
+                <tr class="info">
                     <th>Posted On</th>
                     <th>Posted By</th>
                     <th>Eligibility</th>
@@ -29,7 +29,11 @@
                             <td>
                                 <%= job.jobLocation %>
                             </td>
-                            <td><a href="/category/<%= category.title %>/job/<%= job.title %>">Know More.</a></td>
+                            <%if(!job.description && !job.hiringProcess ){%>
+                                <td class="jobs_table"><a target="_blank" href='<%=job.pdfUrl%>'>Download File</a></td>
+                                <%}else{ %>
+                                    <td class="jobs_table"><a href="/category/<%=category.title %>/job/<%= job.title %>">Know More</a></td>
+                                    <%}%>
                         </tr>
                         <% }) %>
             </table>
