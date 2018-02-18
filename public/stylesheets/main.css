@@ -71,9 +71,10 @@ hr.top_line {
     width: 100%;
     text-align: center;
     color: white;
-    bottom: 20px;
+    margin-bottom: 20px;
     font-size: 16px;
     opacity: 0.9;
+    height: 24px;
 }
 
 .img-box .jobs_tiles:hover {
@@ -278,16 +279,6 @@ a {
     padding-top: 10px;
 }
 
-@media (max-width:500px) {
-    .outer-wrapper {
-        width: 92%;
-    }
-    .container .job_container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 .btn-primary {
     width: 100%;
 }
@@ -435,12 +426,6 @@ p a {
     width: 500px;
     margin-bottom: 6em;
     margin-top: 3em;
-}
-
-@media (max-width:550px) {
-    .blog_form {
-        width: 92%;
-    }
 }
 
 .blog_head {
@@ -667,49 +652,11 @@ div.fb-share-button {
 }
 
 td a {
-    color: #2c3e50;
+    color: rgb(255, 66, 66);
 }
 
 .current_opening {
     margin-top: 15px;
-}
-
-@media (max-width: 550px) {
-    #home_img {
-        display: none;
-    }
-    .img-box .jobs_tiles {
-        margin-bottom: 15px;
-        margin-top: 15px;
-        font-size: 18px;
-        line-height: 2.1em;
-    }
-    .jobs_tiles:hover {
-        background: aliceblue;
-        color: #080808;
-        opacity: 0.6;
-    }
-    .container {
-        width: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .navbar-toggle {
-        margin-right: 50px;
-    }
-    .logo_text {
-        margin-left: 20px;
-    }
-    .fb_like {
-        width: 300px;
-    }
-    .current_opening {
-        margin-top: 10px;
-    }
-    .alert {
-        padding: 0;
-        margin: 10px;
-    }
 }
 
 
@@ -829,5 +776,63 @@ ul.dropdown-menu {
 @media(min-width:550px) {
     .mob_tiles {
         display: none;
+    }
+}
+
+.alert {
+    padding: 0;
+}
+
+
+/* ================================================================================================================
+=====================================  Mobile View Start Here  =================================================
+================================================================================================================ */
+
+@media (max-width: 550px) {
+    #home_img {
+        display: none;
+    }
+    .img-box .jobs_tiles {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        font-size: 18px;
+        line-height: 2.1em;
+        height: auto;
+    }
+    .jobs_tiles:hover {
+        background: aliceblue;
+        color: #080808;
+        opacity: 0.6;
+    }
+    .blog_form {
+        width: 92%;
+    }
+    .container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-toggle {
+        margin-right: 50px;
+    }
+    .logo_text {
+        margin-left: 20px;
+    }
+    .fb_like {
+        width: 300px;
+    }
+    .current_opening {
+        margin-top: 10px;
+    }
+    .alert {
+        padding: 0;
+        margin: 10px;
+    }
+    .outer-wrapper {
+        width: 92%;
+    }
+    .container .job_container {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
