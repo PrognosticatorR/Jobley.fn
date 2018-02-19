@@ -68,15 +68,4 @@ router.post("/cat/:short_title", trimRequest.all, middlewere.isLoggedIn, functio
         }
     });
 });
-
-router.delete("/cat/:short_title", middlewere.isLoggedIn, function(req, res) {
-    Admit.findOneAndRemove({ title: req.params.short_title }, function(err) {
-        if (err) {
-            console.log(err);
-            res.send('You Have An Error :(');
-        } else {
-            res.redirect('back');
-        }
-    });
-});
 module.exports = router;

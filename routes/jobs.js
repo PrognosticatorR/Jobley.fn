@@ -63,7 +63,7 @@ router.post('/job', trimRequest.all, middlewere.isLoggedIn, function(req, res) {
         } else {
             Job.create(req.body.job, function(err, job) {
                 if (err) {
-                    console.log(err);
+                    console.error(err);
                 } else if (job.subcategory) {
                     SubCategory.findOne({ title: req.body.job.subcategory }, function(err, foundsubcategory) {
                         if (err || !foundsubcategory) {

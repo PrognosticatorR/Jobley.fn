@@ -19,11 +19,6 @@ var Request = require('request');
 var Querystring = require('querystring');
 var helmet = require('helmet');
 var cookieParser = require('cookie-parser');
-var url = require('url');
-var normalizeUrl = require('normalize-url');
-var encodeUrl = require('encodeurl');
-var escapeHtml = require('escape-html');
-var http = require('http');
 
 var Category = require('./models/categories');
 var Job = require('./models/jobs');
@@ -45,9 +40,7 @@ var admitCardRoutes = require('./routes/admit&result');
 
 var isDev = process.env.NODE_ENV !== 'production';
 var port = process.env.PORT || 8080;
-
 mongoose.connect('mongodb://localhost/AnswerMachin', { useMongoClient: true });
-// mongoose.connect('mongodb://exampleUser:changeThisInfo@localhost:27017/my_db_name', );
 // mongoose.connect(isDev ? config.db_dev : config.db, {
 //     useMongoClient: true,
 // });
@@ -71,7 +64,7 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));
@@ -84,13 +77,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-normalizeUrl('www.sindresorhus.com?foo=bar&ref=test_ref', {
-    removeQueryParameters: ['ref']
-});
 
 app.use(categoryRoutes);
 app.use('/category/:cat_title', subCategoryRoutes);
@@ -99,7 +89,6 @@ app.use('/category/:cat_title', jobRoutes);
 app.use('/blogs', blogRoutes);
 app.use(authenticationRoutes);
 app.use(admitCardRoutes);
-
 
 app.listen(port, '0.0.0.0', function(req, res, err) {
     if (err) {

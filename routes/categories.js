@@ -36,6 +36,7 @@ router.post("/", middlewere.isLoggedIn, function(req, res) {
         if (err) {
             console.log(err);
         } else {
+            console.log(newlyCreated);
             req.flash('success', 'Category created successfully :) !');
             res.redirect("/");
         }
