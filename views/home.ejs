@@ -1,7 +1,4 @@
 <% include partials/header %>
-    <!--<h3>-->
-    <!--<%= user %>-->
-    <!--</h3>-->
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -63,16 +60,20 @@
                     <% categories.forEach(function(category){ %>
                         <% if(category.title === 'Latest Jobs'){ %>
                             <% var jobarr = category.jobs %>
-                                <% jobarr.slice(jobarr.length-8 , jobarr.length ).reverse().forEach(function(job){ %>
-                                    <a href="/category/Latest Jobs/job/<%= job.title %>" class="list-group-item text-center ">
-                                        <strong><%= job.title %></strong>
-                                    </a>
-                                    <% }) %>
-                                        <% } %>
-                                            <% }) %>
-                                                <a href="/category/Latest Jobs" class="list-group-item text-center list-group-item-info">
-                    All Openings
-                </a>
+                                <% jobarr.slice(jobarr.length-10 , jobarr.length ).reverse().forEach(function(job){ %>
+                                    <%if(!job.description ){%>
+                                        <a target="_blank" href='<%=job.pdfUrl%>' class="list-group-item text-center"><strong><%= job.title %></strong></a>
+                                        <%}else{ %>
+                                            <a href="/category/Latest Jobs/job/<%= job.title %>" class="list-group-item text-center">
+                                                <strong><%= job.title %></strong>
+                                            </a>
+                                            <%}%>
+                                                <% }) %>
+                                                    <% } %>
+                                                        <% }) %>
+                                                            <a href="/category/Latest Jobs" class="list-group-item text-center list-group-item-info">
+                    All Latest Jobs
+                    </a>
                 </div>
             </div>
         </div>
