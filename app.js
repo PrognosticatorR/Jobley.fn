@@ -40,7 +40,8 @@ var admitCardRoutes = require('./routes/admit&result');
 
 var isDev = process.env.NODE_ENV !== 'production';
 var port = process.env.PORT || 8080;
-mongoose.connect('mongodb://localhost/AnswerMachin', { useMongoClient: true });
+
+mongoose.connect(process.env.DB, { useMongoClient: true });
 // mongoose.connect(isDev ? config.db_dev : config.db, {
 //     useMongoClient: true,
 // });

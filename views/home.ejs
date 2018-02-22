@@ -1,6 +1,7 @@
 <% include partials/header %>
     <div class="container">
-        <div class="row">
+        <h1 class="head_all">Find all government jobs & intenships : Jobley.in</h1>
+        <div class="row home_row">
             <div class="col-md-8 col-sm-8">
                 <div class=" col-md-4 col-sm-6 img-box">
                     <div class="img-responsive img-rounded thumbnail">
@@ -45,7 +46,7 @@
                                                 you actually put in your time and efforts preparing for a competitive exam. Go slow but go in depth Once you’re done with the analysis part you should then work on the fundamentals.</p>
                                         </div>
                                         <div>
-                                            <h3 class="item-3">SSC(CGL).</h3>
+                                            <h3 class="item-3">How To Prepare For SSC.</h3>
                                             <p class="item-3">The examination consists of a Preliminary Examination followed by a Main examination. Earlier it also used to have interviews, but following a government order, interviews have been dispensed off for all non-gazetted
                                                 posts in the central government. A computer proficiency test or a skill test will also be held for some post.</p>
                                         </div>
@@ -62,9 +63,9 @@
                             <% var jobarr = category.jobs %>
                                 <% jobarr.slice(jobarr.length-10 , jobarr.length ).reverse().forEach(function(job){ %>
                                     <%if(!job.description ){%>
-                                        <a target="_blank" href='<%=job.pdfUrl%>' class="list-group-item text-center"><strong><%= job.title %></strong></a>
+                                        <a target="_blank" href='<%=job.pdfUrl%>' class="list-group-item text-left"><strong><%= job.title %></strong></a>
                                         <%}else{ %>
-                                            <a href="/category/Latest Jobs/job/<%= job.title %>" class="list-group-item text-center">
+                                            <a href="/category/Latest Jobs/job/<%= job.title %>" class="list-group-item text-left">
                                                 <strong><%= job.title %></strong>
                                             </a>
                                             <%}%>
