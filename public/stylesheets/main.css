@@ -170,7 +170,6 @@ a {
 
 .newletter_box h3 {
     font-size: 18px;
-    font-weight: 300;
     text-transform: uppercase;
     margin: 0 0 15px;
     color: #fff;
@@ -231,7 +230,7 @@ a {
 }
 
 .row .thumbnail img:hover {
-    transition: filter 1s ease-out;
+    transition: filter .6s ease-in;
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -o-filter: grayscale(100%);
@@ -363,7 +362,6 @@ a {
 
 .text_container {
     width: 75%;
-    font-size: 16px;
     text-align: justify;
 }
 
@@ -382,7 +380,6 @@ a {
 }
 
 .policy_subhead {
-    font-weight: 700;
     font-size: 1.15em;
     text-decoration: underline;
 }
@@ -420,7 +417,6 @@ p a {
 
 .state-col-deatlis {
     margin: 5px;
-    font-size: 16px;
 }
 
 .job_name li {
@@ -726,6 +722,10 @@ ul.dropdown-menu {
     padding-top: 10px;
 }
 
+.all_Urlpages {
+    color: #15202a;
+}
+
 
 /* ================================================================================================================
 =====================================  Mobile View Start Here  =================================================
@@ -777,6 +777,9 @@ ul.dropdown-menu {
     .container .job_container {
         padding-left: 0;
         padding-right: 0;
+    }
+    .text_container {
+        width: 92%;
     }
 }
 

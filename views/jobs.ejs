@@ -1,57 +1,69 @@
 <% include partials/header %>
     <div class="container job_container">
-        <div class="alert alert-info" role="alert">
-            <h1 class="head_all">FOLLOWING ARE : <strong><%= category.title %></strong></h1>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-condensed table-bordered table-hover">
-                <tr class="info">
-                    <th>Title</th>
-                    <th>Posted By</th>
-                    <th>Eligiblity</th>
-                    <th>Job Location</th>
-                    <th>Last Date</th>
-                    <th>More Details</th>
-                </tr>
-                <% category.jobs.slice().reverse().forEach(function(job){ %>
-                    <tr>
-                        <td><span><%= job.title %></span></td>
-                        <td>
-                            <%= job.department %>
-                        </td>
-                        <td>
-                            <%= job.eligibility %>
-                        </td>
-                        <td>
-                            <%= job.jobLocation %>
-                        </td>
-                        <td><span><%= job.lastDate %></span></td>
-                        <%if(!job.description ){%>
-                            <td class="jobs_table"><a target="_blank" href='<%=job.pdfUrl%>'>Download File</a></td>
-                            <%}else{ %>
-                                <td class="jobs_table"><a href="/category/<%=category.title %>/job/<%= job.title %>">Know More</a></td>
-                                <%}%>
-                                    <% if(user){ %>
-                                        <td>
-
-                                            <a href="/category/<%= category.title %>/job/<%= job.title %>/edit">
-                                                <button class="btn btn-xs btn-warning">Edit </button>
-                                            </a>
-                                            <form id="delete_form" action="/category/<%=category.title %>/job/<%=job.title %>?_method=DELETE" method="POST">
-                                                <button class="btn  btn-xs btn-danger ">Delete</button>
-                                            </form>
-                                        </td>
-                                        <% } %>
+        <%if(category.job){%>
+            <div class="alert alert-info" role="alert">
+                <h1 class="head_all">FOLLOWING ARE : <strong><%= category.title %></strong></h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-condensed table-bordered table-hover">
+                    <tr class="info">
+                        <th>Title</th>
+                        <th>Posted By</th>
+                        <th>Eligiblity</th>
+                        <th>Job Location</th>
+                        <th>Last Date</th>
+                        <th>More Details</th>
                     </tr>
-                    <% }) %>
-            </table>
-            <%if(user){%>
-                <a href="/category/<%=category.title %>/job/new">
-                    <button class="btn btn-info">
+                    <% category.jobs.slice().reverse().forEach(function(job){ %>
+                        <tr>
+                            <td><span><%= job.title %></span></td>
+                            <td>
+                                <%= job.department %>
+                            </td>
+                            <td>
+                                <%= job.eligibility %>
+                            </td>
+                            <td>
+                                <%= job.jobLocation %>
+                            </td>
+                            <td><span><%= job.lastDate %></span></td>
+                            <%if(!job.description ){%>
+                                <td class="jobs_table"><a target="_blank" href='<%=job.pdfUrl%>'>Download File</a></td>
+                                <%}else{ %>
+                                    <td class="jobs_table"><a href="/category/<%=category.title %>/job/<%= job.title %>">Know More</a></td>
+                                    <%}%>
+                                        <% if(user){ %>
+                                            <td>
+
+                                                <a href="/category/<%= category.title %>/job/<%= job.title %>/edit">
+                                                    <button class="btn btn-xs btn-warning">Edit </button>
+                                                </a>
+                                                <form id="delete_form" action="/category/<%=category.title %>/job/<%=job.title %>?_method=DELETE" method="POST">
+                                                    <button class="btn  btn-xs btn-danger ">Delete</button>
+                                                </form>
+                                            </td>
+                                            <% } %>
+                        </tr>
+                        <% }) %>
+                </table>
+                <%if(user){%>
+                    <a href="/category/<%=category.title %>/job/new">
+                        <button class="btn btn-info">
                         Post Jobs
                     </button>
-                </a>
+                    </a>
+                    <%}%>
+            </div>
+            <% }else{%>
+                <div class="alert alert-warning" role="alert">
+                    <h1 class="head_all"><i class="far fa-frown"></i> &nbsp;&nbsp;there is no current openings in : <strong><%= category.title %></strong> &nbsp;&nbsp;<i class="far fa-frown"></i> </h1>
+                </div>
+                <h1 class="head_all">
+                    We Display Jobs Here as soon they arrieved. <i class="far fa-smile"></i>
+                </h1>
+                <h4 class="text-center">
+                    Stay tunned With Us For Get Job Oprtunity Before Everyone Else.
+                </h4>
                 <%}%>
-        </div>
     </div>
     <% include partials/footer %>

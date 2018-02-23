@@ -37,6 +37,7 @@ var authenticationRoutes = require('./routes/authentication');
 var jobRoutes = require('./routes/jobs');
 var indexRoutes = require('./routes/index');
 var admitCardRoutes = require('./routes/admit&result');
+var allRoutes = require('./routes/all');
 
 var isDev = process.env.NODE_ENV !== 'production';
 var port = process.env.PORT || 8080;
@@ -90,6 +91,7 @@ app.use('/category/:cat_title', jobRoutes);
 app.use('/blogs', blogRoutes);
 app.use(authenticationRoutes);
 app.use(admitCardRoutes);
+app.use(allRoutes);
 
 app.listen(port, '0.0.0.0', function(req, res, err) {
     if (err) {
